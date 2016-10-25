@@ -12,6 +12,9 @@ sudo apt upgrade
 # Install C compiler as sudo
 sudo apt-get install build-essential
 
+# Install curl
+apt-get install curl
+
 # Install git, make, automake, screen, libcurl4-openssl-dev
 sudo apt-get install git make automake screen libcurl4-openssl-dev
 
