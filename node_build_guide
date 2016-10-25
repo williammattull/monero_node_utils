@@ -1,0 +1,39 @@
+# Work in progress
+
+# This guide is used to build a Monero node using Ubuntu 16.4
+# Note that all these codes are for mining Monero [XMR]
+
+# Inital steps
+
+# Update apt as sudo
+sudo apt update
+sudo apt upgrade
+
+# Install C compiler as sudo
+sudo apt-get install build-essential
+
+# Install git, make, automake, screen, libcurl4-openssl-dev
+sudo apt-get install git make automake screen libcurl4-openssl-dev
+
+# Download Wolf's cpu-miner from Github
+cd /opt
+
+git clone https://github.com/wolf9466/cpuminer-multi
+
+cd cpuminer-multi
+
+# Build cpuminer-multi
+./autogen.sh
+
+CFLAGS="-march=native" ./configure --disable-aes-ni 
+
+make
+
+screen -S miner ./minerd -a cryptonight -o monero pool address -u monero wallet address -p x -t 1
+(The last line of code should look something like: screen -S miner ./minerd -a cryptonight -o stratum+tcp://xmr.crypto-pool.fr:3333 -u 492xkTA1oHfdYes8nxqAukcAemEgQmdyMXV833fuHGtfQLmk4FxH9QZLUhFvFAgNt5fjmzSC8FWfmSfHLBhdmA8oGfy6rGX -p x -t 1
+Pool address is replaced by your pool's mining address and wallet address replaced by your real wallet address.
+
+
+
+
+
