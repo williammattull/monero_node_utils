@@ -1,4 +1,4 @@
-#!\etc\bash
+#!/etc/bash
 # This script will gracefully stop the
 # monero daemon. You can run a kill command
 # but you may loose the last batch of blocks.
