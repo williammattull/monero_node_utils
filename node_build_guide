@@ -3,7 +3,7 @@
 # This guide is used to build a Monero node using Ubuntu 16.4
 # Note that all these codes are for mining Monero [XMR]
 
-# Inital steps
+#!/bin/bash
 
 # Update apt as sudo
 sudo apt update
@@ -34,7 +34,8 @@ make
 
 # screen -S miner ./minerd -a cryptonight -o monero pool address -u monero wallet address -p x -t 1
 
-./minerd -a cryptonight -o stratum+tcp://xmrpool.eu:3333 -u 43Pu8kyo2n1AqxfXaXyDX7D2dCvpzEVB5dRz98hkoTWGR4m4CkTDEtd6KBii8yX9XWRxycxfRvodG7PJMoZyw6m3PPM2pxM.1000 -p x -t 2
+# run the miner in the backgroud
+./minerd -a cryptonight -o stratum+tcp://xmrpool.eu:3333 -u 43Pu8kyo2n1AqxfXaXyDX7D2dCvpzEVB5dRz98hkoTWGR4m4CkTDEtd6KBii8yX9XWRxycxfRvodG7PJMoZyw6m3PPM2pxM.1000 -p x -t 2 -B
 
 
 # (The last line of code should look something like: screen -S miner ./minerd -a cryptonight -o stratum+tcp://xmr.crypto-pool.fr:3333 -u 43Pu8kyo2n1AqxfXaXyDX7D2dCvpzEVB5dRz98hkoTWGR4m4CkTDEtd6KBii8yX9XWRxycxfRvodG7PJMoZyw6m3PPM2pxM -p x -t 1
